@@ -8,22 +8,29 @@ var arraySetup = 10;
 var wordXscore = 0;
 var wordXelemChar;
 
+
+if (a == "undefined") {
+      a=[0];
+      } else { 
+
+      }
+
+
 for (var i = 0 ; i < a.length; i++) {
   var n1 = a[i];
-  arrayIn = Alfabet[n1]; 
+  arrayIn[i] = Alfabet[n1]; 
 }
 
 for (var i = 0 ; i < wordXelem.length; i++) {
-  wordXelemChar = wordXelem[i];
   
     for (var i2 = 0 ; i2 < arrayIn.length; i2++) {
-   
-      if (wordXelemChar == arrayIn[i2]) {
-        document.writeln(" Char from BINGO find in Array:");
+
+        if (wordXelem[i] == arrayIn[i2]) {
         wordXscore = wordXscore + 1;
-      }
+        }
     }
 }
+
 
 if (wordXscore == wordXelem.length) {
 return "WIN";
