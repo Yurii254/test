@@ -1,13 +1,12 @@
 function bingo(a) {
   // your winning code here
   
-var Alfabet = ["A","B", "C", "D", "E", "F","G", "H", "I", "J", "K","L", "M", "N", "O", "P","Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
-var wordXelem = ["B", "I", "N", "G", "O"];
-var arrayIn = [];
+var arrayAbc = ["A","A","B", "C", "D", "E", "F","G", "H", "I", "J", "K","L", "M", "N", "O", "P","Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+var arrayBingo = ["B", "I", "N", "G", "O"];
+var arrayA = [];
 var arraySetup = 10;
-var wordXscore = 0;
-var wordXelemChar;
-
+var charScore = 0;
+var arrayACheck=0;;
 
 if (a == "undefined") {
       a=[0];
@@ -15,27 +14,38 @@ if (a == "undefined") {
 
       }
 
-
 for (var i = 0 ; i < a.length; i++) {
   var n1 = a[i];
-  arrayIn[i] = Alfabet[n1]; 
+  arrayA[i] = arrayAbc[n1]; 
 }
 
-for (var i = 0 ; i < wordXelem.length; i++) {
-  
-    for (var i2 = 0 ; i2 < arrayIn.length; i2++) {
+for (var i = 0 ; i < arrayBingo.length; i++) {
+arrayACheck =0;
 
-        if (wordXelem[i] == arrayIn[i2]) {
-        wordXscore = wordXscore + 1;
-        }
+    for (var i2 = 0 ; i2 < arrayA.length; i2++) {
+        if (arrayBingo[i] == arrayA[i2]) {
+        arrayACheck = 1;        
+        } 
     }
+    
+    if (arrayACheck > 0)  {   
+    charScore ++;
+    }
+    
 }
+console.log("a");
+console.log(a);
+console.log("a");
+console.log(arrayA);
+console.log("charScore");
+console.log(charScore);
 
-
-if (wordXscore == wordXelem.length) {
-return "WIN";
-} else { 
+if (charScore < arrayBingo.length) {
 return "LOSE";
 }
+
+if (charScore >= arrayBingo.length) {
+return "WIN";
+} 
 
 };
