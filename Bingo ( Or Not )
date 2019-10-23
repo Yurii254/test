@@ -1,0 +1,36 @@
+function bingo(a) {
+  // your winning code here
+  
+var Alfabet = ["A","B", "C", "D", "E", "F","G", "H", "I", "J", "K","L", "M", "N", "O", "P","Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+var wordXelem = ["B", "I", "N", "G", "O"];
+var arrayIn = [];
+var arraySetup = 10;
+var wordXscore = 0;
+var wordXelemChar;
+
+for (var i = 0 ; i < a.length; i++) {
+  var n1 = a[i];
+  arrayIn = Alfabet[n1]; 
+}
+
+
+for (var i = 0 ; i < wordXelem.length; i++) {
+  wordXelemChar = wordXelem[i];
+  
+    for (var i2 = 0 ; i2 < arrayIn.length; i2++) {
+   
+      if (wordXelemChar == arrayIn[i2]) {
+        document.writeln(" Char from BINGO find in Array:");
+        wordXscore = wordXscore + 1;
+      }
+    }
+}
+
+
+if (wordXscore == wordXelem.length) {
+return "WIN";
+} else { 
+return "LOSE";
+}
+
+};
