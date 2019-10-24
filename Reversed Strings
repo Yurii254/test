@@ -1,0 +1,21 @@
+function solution(str){
+
+
+var str1Length = str.length;
+var str2 = "";
+var n;
+
+console.log("=start=");
+console.log(str);
+console.log(str1Length);
+
+for (var i = 1; i <= str1Length; i++){
+n = str1Length - i;
+str2 = str2 + str[n];
+}
+
+console.log("= word =");
+console.log(str2);
+
+return (str2) ;
+}
