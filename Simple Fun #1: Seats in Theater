@@ -1,0 +1,13 @@
+function seatsInTheater(nCols, nRows, col, row) {
+  //coding and coding..
+ 
+ console.log (nCols, nRows, col, row);
+ 
+var calcCol, calcRow;
+ 
+calcCol = nCols - col +1;
+calcRow = nRows - row;
+
+return (calcCol*calcRow);
+
+}
