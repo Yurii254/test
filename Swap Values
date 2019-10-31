@@ -1,0 +1,16 @@
+function swapValues(arguments) {
+    var args = Array.prototype.slice.call(arguments);
+    
+    console.log(arguments);
+
+    
+    var temp = args[0];
+    args[0] = args[1];
+    args[1] = temp;
+    console.log(args);
+   
+   arguments[0] = args[0];
+   arguments[1] = args[1];
+          
+    return arguments;
+}
