@@ -1,0 +1,26 @@
+function amIWilson(p) {
+  // check if prime is Wilson
+  
+  console.log(p)
+  
+  var p1 = factorial(p - 1) + 1;
+  console.log(p1);
+    
+  
+  var p3 = p1 / (p * p);
+  console.log(p3);
+  
+    
+ if (Number.isInteger(p3)) {
+  return true;
+ }
+ return false;
+}
+
+function factorial(n){
+    var result = 1;
+    while(n){
+        result *= n--;
+    }
+    return result;
+}
