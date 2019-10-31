@@ -1,0 +1,17 @@
+function slope(points)
+{
+//..
+
+var mCalc, xCalc, yCalc;
+var returnString;
+
+xCalc = points[2]-points[0];
+if (xCalc == 0) return "undefined";
+
+yCalc = points[3]-points[1];
+
+mCalc = Math.floor(yCalc/xCalc);
+returnString = mCalc.toString();
+return returnString;
+
+}
