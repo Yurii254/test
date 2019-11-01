@@ -41,3 +41,67 @@ var re = /\s/;
    return shortWord;     
    
    }
+   
+   
+   function findShort(s1){
+
+var s = s1.toLowerCase();
+var strLength = s.length;
+
+console.log(s);
+console.log("s.length");
+console.log(s.length);
+
+var shortWord = strLength;
+var re = /\s/;
+var sW = 0;
+var xOld = 0;
+
+
+   for (var x = 0; x < strLength ; x ++) {
+        //console.log("s[i]");
+        //console.log(s[i]);
+        
+        if(s[x].match(re) ) {
+        //console.log("match(re)"); 
+        
+           console.log(" pos space");
+           console.log(x);   
+                
+           //console.log("  xOld");
+           //console.log(xOld); 
+            
+           //sW  = x - xOld  ;
+                   
+           //console.log("  word lenght");
+           //console.log(sW);
+           
+           //console.log("old shortWord");
+           //console.log(shortWord);
+           
+             
+            for (var n  = xOld; n < x ; n ++) {
+                         
+                     sW = n;
+                     //console.log("new shortWord");
+                     //console.log(shortWord);      
+             }
+            console.log("  word lenght");
+            console.log(sW);
+             
+           xOld = x; 
+           
+           if(sW < shortWord) {
+           
+           shortWord = sW;
+           }
+           
+                  
+        }
+       
+   }
+   console.log("shortWord finall");
+   console.log(shortWord);
+   
+   return shortWord;     
+   }
