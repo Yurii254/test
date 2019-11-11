@@ -1,0 +1,64 @@
+function dateNbDays(a0, a, p) {
+
+  console.log("You have an amount of money a0");
+  console.log(a0);
+  console.log("You want to have an amoun a");
+  console.log(a); 
+  
+  var countDay = 0;
+  var Year = "";
+  
+  var startYear = Date.parse("2016-01-01");
+  
+  var n1 = 0;
+  var n2 = a - a0;
+  var n3 = 0;
+  var n4 = 0;
+  
+  while(n1 <= n2){
+    var n = (a0 / 100) * (p / 360);
+    
+    n3 =  + n.toFixed(4);
+    n1 = n1 + n3;
+    n4 =  + n1.toFixed(4);
+    countDay++;
+    
+  console.log("n3");
+  console.log(n3);   
+  
+  console.log("n4");
+  console.log(n4);   
+  
+  //console.log("countDay");
+  //console.log(countDay);   
+  }
+    
+  console.log("countDay");
+  console.log(countDay);   
+  
+  
+  var msFromDay = countDay * 24 * 60 * 60 * 1000 ;
+   
+  console.log("msFromDay");
+  console.log(msFromDay); 
+  
+  var ms = startYear + msFromDay;
+  
+  console.log("ms");
+  console.log(ms); 
+  
+  var endYear = new Date(ms);
+  //Year = startYear + countDay
+  
+  var getYear = endYear.getFullYear();
+  var getMonth = endYear.getMonth();
+  var getDate = endYear.getDate();
+  
+  var getStr = getYear + "-" +getMonth+ "-" +getDate;
+  
+  
+  console.log("getStr");
+  console.log(getStr); 
+  //return as a string "YYYY-MM-DD"
+  return (getStr);
+}
