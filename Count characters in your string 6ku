@@ -1,0 +1,23 @@
+function count (string1) { 
+
+  // The function code should be here
+  obj = {};
+  
+  if (string1.length > 1) {
+  
+    for (var i = 0; i < string1.length; i++){
+      var q = string1[i];
+      
+      if (q in obj) {
+        obj[q] = obj[q] + 1;
+      }
+      else {
+        obj[q] = 1;
+      }
+  
+    }
+    return obj;
+  }
+  if (string1.length < 1) {
+     return obj;
+  }
