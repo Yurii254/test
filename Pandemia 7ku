@@ -1,0 +1,79 @@
+function infected(s) {
+
+  console.log(s);
+  console.log(s.length);
+  var infected = 0;
+  var infectedAll = 0;
+  var uninfected = 0;
+  var ocean = 0;
+  var person = 0;
+  var population = 0;
+  var percentage = 0;
+  
+  for (var i = 0; i < s.length; i++){
+  //console.log(i);
+  
+  if (s[i] == "X") {
+  //console.log("X");
+   
+    if(infected > 0){
+      console.log("infectedAll count");
+      console.log(infectedAll);
+      
+      console.log("person count");
+      console.log(person);
+      
+      infectedAll = infectedAll + person;
+      
+       infected = 0;
+       uninfected = 0;
+       //person = 0;
+      
+      }
+    
+
+ ocean++;
+ }
+  
+ if (s[i] == 0) {
+   // console.log("i == 0");
+    uninfected++;
+    person++
+    }
+  
+ if (s[i] == 1) {
+   // console.log("i == 1");
+    infected++;
+    person++
+    }
+      
+ }
+  
+   if (ocean == 0) {
+   console.log("ocean == 0");
+   infectedAll = infected * person;
+   }  
+
+  console.log("infectedAll count");
+  console.log(infectedAll);
+    
+
+
+  if (infectedAll < 1) {
+     return 0;
+      }
+     
+  if (infectedAll > 0) {
+    population = s.length - ocean;
+    console.log("population");
+    console.log(population);
+        
+     percentage = (infectedAll / population)*100;
+     console.log("percentage");
+     console.log(percentage);
+     return percentage;
+
+     }
+      
+ 
+}
