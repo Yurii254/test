@@ -1,7 +1,5 @@
 function infected(s) {
 
-  console.log(s);
-  console.log(s.length);
   var infected = 0;
   var infectedAll = 0;
   var uninfected = 0;
@@ -10,70 +8,76 @@ function infected(s) {
   var population = 0;
   var percentage = 0;
   
-  for (var i = 0; i < s.length; i++){
-  //console.log(i);
+  console.log(s);
+  console.log(s.length);
   
+  for (var i = 0; i < s.length; i++){
+  console.log(i);
+    
   if (s[i] == "X") {
-  //console.log("X");
-   
+  console.log("X");
+  ocean++; 
     if(infected > 0){
+     
+      infectedAll = infectedAll + person;
+      infected = 0;
+      uninfected = 0;
+       
       console.log("infectedAll count");
       console.log(infectedAll);
-      
       console.log("person count");
       console.log(person);
-      
-      infectedAll = infectedAll + person;
-      
-       infected = 0;
-       uninfected = 0;
-       //person = 0;
-      
+          
       }
-    
 
- ocean++;
+ person = 0;
  }
-  
- if (s[i] == 0) {
+   
+ if (s[i] == "0") {
    // console.log("i == 0");
     uninfected++;
     person++
     }
   
- if (s[i] == 1) {
-   // console.log("i == 1");
+ if (s[i] == "1") {
+    console.log("infected");
     infected++;
     person++
     }
       
  }
-  
+ 
+   if (i == s.length) {
+   console.log("End");
+      if(infected > 0){
+      infectedAll = infectedAll + person;
+      }
+   }  
+ 
    if (ocean == 0) {
    console.log("ocean == 0");
    infectedAll = infected * person;
    }  
 
-  console.log("infectedAll count");
-  console.log(infectedAll);
-    
-
-
   if (infectedAll < 1) {
-     return 0;
-      }
+    console.log("percentage 0");
+    return 0;
+  }
      
   if (infectedAll > 0) {
     population = s.length - ocean;
+   
+    console.log("infectedAll count");
+    console.log(infectedAll);
+      
     console.log("population");
     console.log(population);
-        
-     percentage = (infectedAll / population)*100;
-     console.log("percentage");
-     console.log(percentage);
-     return percentage;
+          
+    percentage = (infectedAll / population)*100;
+    console.log("   percentage   ");
+    console.log(percentage);
+    return percentage;
 
-     }
-      
- 
+  }
+  
 }
