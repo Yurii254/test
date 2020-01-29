@@ -1,0 +1,29 @@
+function createPhoneNumber(numbers){
+console.log(numbers) ; 
+console.log(numbers.length);
+
+var output ='';
+
+for (var i = 0; i < numbers.length; i++){
+ 
+  output = output + numbers[i];
+   console.log(numbers[i]);
+   console.log(output);
+   
+  if (i == 1) {
+  output = '(' + output;
+  }
+  
+  if (i == 2) {
+  output =  output+')'+' ';
+  }
+  
+  if (i == 5) {
+  output = output + '-';
+  }
+  
+  
+}
+console.log(output);
+return output;
+}
