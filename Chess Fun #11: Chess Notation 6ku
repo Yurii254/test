@@ -30,7 +30,8 @@ function chessNotation(notation) {
       //console.log(str.length);
       
       for (let i2 = 0; i2 < str.length; i2++){
-        //console.log(arrY); 
+      
+                //console.log(arrY); 
         //console.log(i2); 
         //console.log(str[i2]); 
         arrInRow[i2]= str[i2]; 
@@ -38,6 +39,9 @@ function chessNotation(notation) {
     //console.log(arrInRow);
     //console.log(arrY);
      arrIn[arrY] = [...arrInRow];
+     
+     arrInRow.length = 0;
+     
      //console.log(arrIn);
     
      // arrInRow.length = 0;
