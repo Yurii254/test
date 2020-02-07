@@ -14,10 +14,13 @@ function chessNotation(notation) {
   let strEnd = 0;
   let str;
   
+  //create array in
   notation = notation + "/";
   for (let i = 0; i < notation.length; i++){
   
+  
     if (notation[i] =="/"){
+    
       //console.log(i);
       //console.log(notation[i]);
       strEnd = i;
@@ -26,19 +29,26 @@ function chessNotation(notation) {
       //console.log(str);
       //console.log(str.length);
       
-      for (let i = 0; i < str.length; i++){
-        //console.log(i); 
-        //console.log(str[i]); 
-        arrInRow[i] = str[i]; 
+      for (let i2 = 0; i2 < str.length; i2++){
+        //console.log(arrY); 
+        //console.log(i2); 
+        //console.log(str[i2]); 
+        arrInRow[i2]= str[i2]; 
         }
-      
-     //console.log(arrInRow);
-     arrIn = arrInRow;
-     console.log(arrIn);
-     arrInRow.length = 0
+    //console.log(arrInRow);
+    //console.log(arrY);
+     arrIn[arrY] = [...arrInRow];
+     //console.log(arrIn);
+    
+     // arrInRow.length = 0;
+     
+     //console.log(arrY);
+     arrY ++;
      }
      
      
    }
+  console.log(arrIn);
+
   
 }
