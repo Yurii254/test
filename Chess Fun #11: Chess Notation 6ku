@@ -1,0 +1,44 @@
+function chessNotation(notation) {
+  //coding and coding..
+  
+  console.log(notation);  
+  console.log(notation.length);
+  
+  let n;
+  let arrIn = [];
+  let arrInRow = [];
+  let arrOut = [];
+  let arrX = 0;
+  let arrY = 0;
+  let strStart = 0;
+  let strEnd = 0;
+  let str;
+  
+  notation = notation + "/";
+  for (let i = 0; i < notation.length; i++){
+  
+    if (notation[i] =="/"){
+      //console.log(i);
+      //console.log(notation[i]);
+      strEnd = i;
+      str = notation.slice(strStart,strEnd);
+      strStart = i + 1;
+      //console.log(str);
+      //console.log(str.length);
+      
+      for (let i = 0; i < str.length; i++){
+        //console.log(i); 
+        //console.log(str[i]); 
+        arrInRow[i] = str[i]; 
+        }
+      
+     //console.log(arrInRow);
+     arrIn = arrInRow;
+     console.log(arrIn);
+     arrInRow.length = 0
+     }
+     
+     
+   }
+  
+}
