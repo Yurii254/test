@@ -78,6 +78,7 @@ function chessNotation(notation) {
     
     if(c == '_') {
     z ++;
+    //console.log(z);
     }
     
     if(c !== '_') {
