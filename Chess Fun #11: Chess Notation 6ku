@@ -13,6 +13,8 @@ function chessNotation(notation) {
   let strStart = 0;
   let strEnd = 0;
   let str;
+  let str2;
+  let strOut = 0;
   
   //create array in
   notation = notation + "/";
@@ -52,7 +54,7 @@ function chessNotation(notation) {
      
      
    }
-  console.log(arrIn);
+  //console.log(arrIn);
   
   //перебор строк
   for (let i3 = 0; i3 < 8; i3++){  
@@ -71,6 +73,32 @@ function chessNotation(notation) {
 
   }
   console.log("output");
-  console.log(arrOut);
+  //console.log(arrOut);
   
+  //перебор строк
+  for (let i5 = 0; i5 < 8; i5++){  
+  
+  //перебор столбцов
+    for (let i6 = 0; i6 < 8; i6++){
+  
+    let c = String(arrOut[i5][i6]);
+         
+      if (c !== "undefined"){
+        if (c !== "8"){
+          str2 = str2 + c;
+        }
+      }
+    }
+    if (i5 < 7){
+        str2 = str2 + "/";
+        }
+    
+    }
+    
+     
+     strOut = strOut + str2
+  
+  
+  console.log("strOut");
+  console.log(strOut);
 }
