@@ -56,13 +56,19 @@ function chessNotation(notation) {
   
   //перебор строк
   for (let i3 = 0; i3 < 8; i3++){  
-  let x1 = 8 - i3;
+  let x = 7 - i3;
   //перебор столбцов
     for (let i4 = 0; i4 < 8; i4++){
-    let x2 = 8 - i4;
-    arrInRow[i] = arrIn[x2,x1]
+    let y = 7 - i4;
+    //console.log(y); 
+    //console.log(i3);  
+     
+    arrInRow[i4] = arrIn[y][i3]
+    //console.log("arrInRow");
+    //console.log(arrInRow);
     }
-    arrOut[i] = [...arrInRow];
+  arrOut[i3] = [...arrInRow];
+
   }
   console.log("output");
   console.log(arrOut);
