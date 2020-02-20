@@ -3,7 +3,7 @@ function chessNotation(notation) {
   //coding and coding..
   
   console.log(notation);  
-  console.log(notation.length);
+  //console.log(notation.length);
   
   let n;
   let arrIn = [];
@@ -20,42 +20,36 @@ function chessNotation(notation) {
   //create array in
   notation = notation + "/";
   for (let i = 0; i < notation.length; i++){
-  
-  
+    
     if (notation[i] =="/"){
     
-      //console.log(i);
-      //console.log(notation[i]);
       strEnd = i;
       str = notation.slice(strStart,strEnd);
       strStart = i + 1;
-      //console.log(str);
-      //console.log(str.length);
       
-      for (let i2 = 0; i2 < str.length; i2++){
-      
-                //console.log(arrY); 
-        //console.log(i2); 
-        //console.log(str[i2]); 
-        arrInRow[i2]= str[i2]; 
+      for (let i2 = 0; i2 < 8 ; i2++){
+        
+        if (str[i2] < 9){
+          arrInRow[i2]= '_';
+          } else {
+          
+            if (i2 < str.length){
+              arrInRow[i2]= str[i2];
+              } else { arrInRow[i2]= '_';
+              }
+          }
         }
-    //console.log(arrInRow);
-    //console.log(arrY);
+
      arrIn[arrY] = [...arrInRow];
      
      arrInRow.length = 0;
-     
-     //console.log(arrIn);
-    
-     // arrInRow.length = 0;
-     
-     //console.log(arrY);
+
      arrY ++;
      }
      
      
    }
-  //console.log(arrIn);
+  console.log(arrIn);
   
   //перебор строк
   for (let i3 = 0; i3 < 8; i3++){  
@@ -63,47 +57,54 @@ function chessNotation(notation) {
   //перебор столбцов
     for (let i4 = 0; i4 < 8; i4++){
     let y = 7 - i4;
-    //console.log(y); 
-    //console.log(i3);  
      
     arrInRow[i4] = arrIn[y][i3]
-    //console.log("arrInRow");
-    //console.log(arrInRow);
+
     }
   arrOut[i3] = [...arrInRow];
 
   }
   console.log("output");
-  //console.log(arrOut);
+  console.log(arrOut);
   
   //перебор строк
   for (let i5 = 0; i5 < 8; i5++){  
+  let z = 0;
   
   //перебор столбцов
     for (let i6 = 0; i6 < 8; i6++){
   
-    let c = String(arrOut[i5][i6]);
+    let c = arrOut[i5][i6];
     
-    //console.log("c");
-    //console.log(c);
+    if(c == '_') {
+    z ++;
+    }
     
-      if (c !== "undefined"){
-        if (c !== "8"){
-          str2 = str2 + c;
-
-        }
+    if(c !== '_') {
+    
+      if (z > 0) {
+      str2 = str2 + z + c;
+      z = 0;
+      } else {
+      str2 = str2 + c;
       }
     }
-    if (i5 < 7){
-        str2 = str2 + "/";
-        }
     
+    if(z == 8) {
+       str2 = str2 + 8;
+       z = 0;
+       }  
+
+    }
+    if (i5 < 7){
+         str2 = str2 + '/'; 
+        }
+   
     }
     
-     
-     strOut = strOut + str2
-  
-  
+  strOut = String(strOut) + String(str2);
+    
   console.log("strOut");
   console.log(strOut);
+  return (strOut);
 }
