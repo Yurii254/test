@@ -1,4 +1,3 @@
-
 function chessNotation(notation) {
   //coding and coding..
   
@@ -25,31 +24,42 @@ function chessNotation(notation) {
     
       strEnd = i;
       str = notation.slice(strStart,strEnd);
+      console.log (str);
       strStart = i + 1;
       
-      for (let i2 = 0; i2 < 8 ; i2++){
+      let i23, i24;
+      let i31 = 0;
+      let i32 = 0;
+      
+      for (let i2 = 0; i2 < str.length ; i2++){
+
+        let i21 = str[i2];
         
-        if (str[i2] < 9){
-          arrInRow[i2]= '_';
-          } else {
+        if (i21 <= 8){
           
-            if (i2 < str.length){
-              arrInRow[i2]= str[i2];
-              } else { arrInRow[i2]= '_';
-              }
+          for (let i22 = 0; i22 < i21; i22++){
+            arrInRow[i31] = '_';
+            i31 ++;
           }
+            
+        } else {
+
+          arrInRow[i31] = str[i32];
+          i31 ++;
+          }     
+        i32 ++;
         }
-
+        
+     console.log (arrInRow);
      arrIn[arrY] = [...arrInRow];
-     
-     arrInRow.length = 0;
 
+     arrInRow.length = 0;
      arrY ++;
      }
      
      
    }
-  console.log(arrIn);
+  //console.log(arrIn);
   
   //перебор строк
   for (let i3 = 0; i3 < 8; i3++){  
@@ -76,12 +86,19 @@ function chessNotation(notation) {
   
     let c = arrOut[i5][i6];
     
+    //console.log('');
+    //console.log(i6);
+    
     if(c == '_') {
     z ++;
+
+    //console.log("c == '_'");
     //console.log(z);
     }
     
-    if(c !== '_') {
+    if(c != '_') {
+    
+    //console.log("c != '_'");
     
       if (z > 0) {
       str2 = str2 + z + c;
@@ -89,6 +106,7 @@ function chessNotation(notation) {
       } else {
       str2 = str2 + c;
       }
+    //console.log(str2);
     }
     
     if(z == 8) {
@@ -97,14 +115,17 @@ function chessNotation(notation) {
        }  
 
     }
+    
+    // in output 7 char "/"
     if (i5 < 7){
-         str2 = str2 + '/'; 
-        }
-   
+       str2 = str2 + '/'; 
     }
-    
+     
+    }
+  // in output type string
   strOut = String(strOut) + String(str2);
-    
+  
+  //output
   console.log("strOut");
   console.log(strOut);
   return (strOut);
