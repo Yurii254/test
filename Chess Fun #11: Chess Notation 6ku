@@ -4,7 +4,7 @@ function chessNotation(notation) {
   console.log(notation);  
   //console.log(notation.length);
   
-  let n;
+  //let n;
   let arrIn = [];
   let arrInRow = [];
   let arrOut = [];
@@ -27,7 +27,7 @@ function chessNotation(notation) {
       console.log (str);
       strStart = i + 1;
       
-      let i23, i24;
+      //let i23, i24;
       let i31 = 0;
       let i32 = 0;
       
@@ -36,12 +36,27 @@ function chessNotation(notation) {
         let i21 = str[i2];
         
         if (i21 <= 8){
+        
+        //console.log ("i21 <= 8");
+        //console.log (i21);
+        
+          if (i21 == 1){
           
-          for (let i22 = 0; i22 < i21; i22++){
-            arrInRow[i31] = '_';
-            i31 ++;
+        //console.log ("i21 == 1");
+        //console.log (i21);
+          arrInRow[i31] = '_';
+          i31 ++;
+          } else {
+          
+          //console.log ("else");
+        //console.log (i21);
+          
+            for (let i22 = 0; i22 < i21; i22++){
+              arrInRow[i31] = '_';
+              i31 ++;
+            }
           }
-            
+                    
         } else {
 
           arrInRow[i31] = str[i32];
@@ -50,7 +65,7 @@ function chessNotation(notation) {
         i32 ++;
         }
         
-     console.log (arrInRow);
+     //console.log (arrInRow);
      arrIn[arrY] = [...arrInRow];
 
      arrInRow.length = 0;
@@ -59,7 +74,7 @@ function chessNotation(notation) {
      
      
    }
-  //console.log(arrIn);
+  console.log(arrIn);
   
   //перебор строк
   for (let i3 = 0; i3 < 8; i3++){  
@@ -81,8 +96,12 @@ function chessNotation(notation) {
   for (let i5 = 0; i5 < 8; i5++){  
   let z = 0;
   
+  //получить количество значений в массиве
+  let ArrCount = arrOut[i5].length;
+
+  
   //перебор столбцов
-    for (let i6 = 0; i6 < 8; i6++){
+    for (let i6 = 0; i6 < ArrCount; i6++){
   
     let c = arrOut[i5][i6];
     
@@ -94,6 +113,14 @@ function chessNotation(notation) {
 
     //console.log("c == '_'");
     //console.log(z);
+    
+    if(z == 8) {
+       str2 = str2 + "8";
+       z = 0;
+       } else if (i6 == 7 ){
+    str2 = str2 + z
+    }
+    
     }
     
     if(c != '_') {
@@ -108,11 +135,7 @@ function chessNotation(notation) {
       }
     //console.log(str2);
     }
-    
-    if(z == 8) {
-       str2 = str2 + 8;
-       z = 0;
-       }  
+     
 
     }
     
