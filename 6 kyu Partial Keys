@@ -1,4 +1,7 @@
 function partialKeys (obj) {
+
+let str='';
+
 console.log(obj);
 
 for (let key in obj) {
@@ -9,13 +12,17 @@ for (let key in obj) {
   let strStart = 0;
     for (let i = 0; i < a.length ; i++){
       let strEnd = i + 1;
-      let str = a.slice(strStart,strEnd);
-      console.log (str);        
-             
-     // obj[str]:b ;
-        
-       
+     str = a.slice(strStart,strEnd);
+     // console.log (str);      
+                  
       //console.log(obj);   
+      
+        if (str in obj == false) {
+            obj[str] = b ;
+        }
+      
+      
+      
       }
 }   
 
