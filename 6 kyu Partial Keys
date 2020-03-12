@@ -1,1 +1,28 @@
+function partialKeys (obj) {
+console.log(obj);
 
+for (let key in obj) {
+  console.log("for");
+  //console.log(obj[key] );
+  let a = key;
+  let b = obj[key];
+  let strStart = 0;
+    for (let i = 0; i < a.length ; i++){
+      let strEnd = i + 1;
+      let str = a.slice(strStart,strEnd);
+      console.log (str);        
+             
+     // obj[str]:b ;
+        
+       
+      //console.log(obj);   
+      }
+}   
+
+console.log("obj output");
+for (let key in obj) {
+  console.log(key);
+  console.log(obj[key]);
+  }
+
+}
