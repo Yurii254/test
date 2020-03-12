@@ -1,31 +1,8 @@
 function partialKeys (obj) {
-console.log(obj);
-let str='';
-
-for (let key in obj) {
-  let a = key;
-  let b = obj[key];
-  let strStart = 0;
-  
-    for (let i = 0; i < a.length ; i++){
-       let strEnd = i + 1;
-       str = String(a.slice(strStart,strEnd));
-       console.log(str);
-          if (str in obj == false) {
-          obj[str] = b ;
-          }
-    }
-}   
-
-console.log("obj output");
-//console.log(Object.keys(obj));
-obj.d = 4;
-return obj;
-}
-console.log("obj output");
-for (let key in obj) {
-  console.log(key);
-  console.log(obj[key]);
-  }
-
+  return new Proxy(obj, {
+    get: (obj, prop) => {
+      let res = Object.keys(obj).sort().find(key => key.indexOf(prop) === 0);
+      return res ? obj[res] : undefined;
+    } 
+  });
 }
