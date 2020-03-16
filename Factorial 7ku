@@ -1,24 +1,11 @@
-function factorial(n)
-{
-  // Calculate the factorial here
-  
-  console.log(n);
-  
-    if (n < 0) {
-   throw new RangeError(n);
-    }     
-    
-   if (n > 12) {
-   throw new RangeError(n);
-    }      
-              
-    var result = 1;
-    while(n) {
-    result *= n--;
-    }
-    
-    console.log(result);
-    
-    return result;       
-    
+function factorial(n) {
+
+let res = 1;
+
+if (n < 0) throw new RangeError(n);
+if (n > 12) throw new RangeError(n);
+
+while (n) res *= n--;
+
+return res;    
 }
