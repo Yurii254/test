@@ -1,38 +1,26 @@
 function rgb(r, g, b){
-  // complete this function 
-let arr = new Array();
-arr = [r, g, b];
-let x =0;
-let lHEX ='';
-let output ='';
+  let arr = new Array();
+  arr = [r, g, b];
+  let x = 0;
+  let ihex = ''; 
+  let output  = '';
 
-for (let i = 0; i < arr.length; i++) {
+  for (let i = 0; i < arr.length;  i++) {
+  
+    if (arr[i] > 255) {
+      arr[i] = 255;
+      x = arr[i].toString(16);
+      }
+  
+    if (arr[i] <= 0) x = '0';
+  
+    if (arr[i] > 0) x = arr[i].toString(16);
+   
+    if (x.length < 2) x = '0' + x;
 
-  if (arr[i] > 255) {
-  arr[i] = 255;
-  x = arr[i].toString(16);
+    ihex = ihex + x;
+    }
+    
+  output = String(ihex).toUpperCase()
+  return(output); 
   }
-  
-  if (arr[i] > 0) {
-  x = arr[i].toString(16);
-  }
-  
- if (arr[i] == 0) {
- x = '0';
- }
-  
- if (arr[i] < 0) {
- x = '0';
- }
- 
- if (x.length < 2) {
- x = '0' + x;
- }
- 
- lHEX = lHEX + x;
- }
- 
- output =String(lHEX).toUpperCase()
- console.log (output);
- return(output);
-}
