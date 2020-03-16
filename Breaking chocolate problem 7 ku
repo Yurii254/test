@@ -1,17 +1,5 @@
 function breakChocolate(n,m) {
- let res = 0;
- 
- if (n == 1) {
-   if (n == m) {
-     return 0;
-     }
-   }
-
- if (n < 1) return 0; 
-
- if (m < 1) return 0;
- 
-res = (n * m) - 1;
-return res;
-
-}
+ let res = (n * m) - 1;
+ if (res <= 0) return 0;
+ if (res > 0) return res;
+ }
