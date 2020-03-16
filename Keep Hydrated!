@@ -1,9 +1,6 @@
 function litres(time) {
-console.log(time);
+ 
+let result = (time > 0) ? (Math.floor(time/2)) : 0;
 
-if (time ==0) return 0;
-
-var i = Math.floor (Math.floor(time) / 2)
-console.log(i);
-return i;
+return result;
 }
