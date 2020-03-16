@@ -1,22 +1,19 @@
-function getSum( a,b )
-{
-   //Good luck!
-    var c = 0;
-   
-    if (a == b) { 
-    c = a;  
-    }  
-  
-    if (a < b) {
-       for (var i = a; i <= b; i++){
-       c = c + i;
-       }
+function getSum(a,b) {
+let c = 0;
+
+if (a == b) return a; 
+
+if (a < b) {
+  for (let i = a; i <= b; i++) {
+    c = c + i;
     }
-   
-    if (b < a) {
-       for (var i = b; i <= a; i++){
-       c = c + i;
-       }
+  }
+
+if (b < a) {
+  for (let i = b; i <= a; i++) {
+    c = c + i;
     }
-    
+  }
 return (c);
+
+}
