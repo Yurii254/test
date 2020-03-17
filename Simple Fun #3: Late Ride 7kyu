@@ -1,15 +1,20 @@
 function lateRide(n) {
+
+  let minHour = 0;
+  let minMinute = 0;
+  let strRes = 0;
   let res = 0;
-  
+    
   if ( n < 0 ) return res;
   if ( n > 1440 ) return res;
+  if ( n == 60 ) return 1;
 
-  let minHour = Math.floor (n / 60);
-  let minMinute = Math.floor(((n /60) - minHour) * 60);
+  minHour = Math.floor (n / 60);
+  minMinute = Math.round (((n / 60) - minHour) * 60);
   
-  let strRes = String(minHour) + String(minMinute);
+  strRes = String(minHour) + String(minMinute);
     
   for (var i = 0; i < strRes.length; i++) res = res + Number(strRes[i]);
    
   return res;
-}
+  }
