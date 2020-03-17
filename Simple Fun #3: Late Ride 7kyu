@@ -1,0 +1,26 @@
+function lateRide(n) {
+  //coding and coding..
+  console.log(n);
+  //проверяем условие Constraints: 0 ≤ n < 60 * 24.
+  if ( n < 0 ) return 0;
+  if ( n > 1440 ) return 0;
+  
+  //считать минимальное целое количество часов
+  // n делим на 60
+  let minHour = Math.floor (n / 60);
+    
+  //остаток от деления это количество минут
+  let minMinute = Math.floor(((n /60) - minHour) * 60);
+  //считаем сумму цифр
+  
+  console.log("minHour");
+  console.log(minHour);
+  console.log("minMinute");
+  console.log(minMinute);
+  
+  let strRes = ''+minHour+minMinute;
+  console.log(strRes);
+  
+  
+  
+}
