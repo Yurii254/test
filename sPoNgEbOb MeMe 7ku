@@ -1,14 +1,10 @@
- function spongeMeme(str) {
+function spongeMeme(str) {
   
   var str2=[];
 
   for (var i = 0; i < str.length; i++ ){
-          
-          if (i % 2 === 0) {
-          str2[i] = str[i].toUpperCase();  
-          } else {
-          str2[i] = str[i].toLowerCase();
-          }
-   }
-   return str2.join('');
-}
+    str2[i] = (i % 2 === 0) ? str[i].toUpperCase():str[i].toLowerCase();
+    }
+    
+  return str2.join('');
+  }
