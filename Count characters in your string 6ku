@@ -1,23 +1,19 @@
-function count (string1) { 
-
+function count (str) { 
+  
   // The function code should be here
+  let q;
   obj = {};
   
-  if (string1.length > 1) {
+  if (str.length < 1) return obj;
+    
+  if (str.length > 1) {
   
-    for (var i = 0; i < string1.length; i++){
-      var q = string1[i];
+    for (let i = 0; i < str.length; i++){
+      q = str[i];
+      obj[q] = (q in obj) ? obj[q] + 1 : 1;
+      }
       
-      if (q in obj) {
-        obj[q] = obj[q] + 1;
-      }
-      else {
-        obj[q] = 1;
-      }
-  
-    }
     return obj;
   }
-  if (string1.length < 1) {
-     return obj;
-  }
+  
+}
