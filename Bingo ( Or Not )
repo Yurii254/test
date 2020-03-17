@@ -1,51 +1,32 @@
 function bingo(a) {
   // your winning code here
   
-var arrayAbc = ["A","A","B", "C", "D", "E", "F","G", "H", "I", "J", "K","L", "M", "N", "O", "P","Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
-var arrayBingo = ["B", "I", "N", "G", "O"];
-var arrayA = [];
-var arraySetup = 10;
-var charScore = 0;
-var arrayACheck=0;;
+  var arrayAbc = ["A","A","B", "C", "D", "E", "F","G", "H", "I", "J", "K","L", "M", "N", "O", "P","Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+  var arrayBingo = ["B", "I", "N", "G", "O"];
+  var arrayA = [];
+  var arraySetup = 10;
+  var charScore = 0;
+  var arrayACheck = 0;
 
-if (a == "undefined") {
-      a=[0];
-      } else { 
-
-      }
-
-for (var i = 0 ; i < a.length; i++) {
-  var n1 = a[i];
-  arrayA[i] = arrayAbc[n1]; 
-}
-
-for (var i = 0 ; i < arrayBingo.length; i++) {
-arrayACheck =0;
-
-    for (var i2 = 0 ; i2 < arrayA.length; i2++) {
-        if (arrayBingo[i] == arrayA[i2]) {
-        arrayACheck = 1;        
-        } 
+  if (a == "undefined") a=[0];
+ 
+  for (var i = 0; i < a.length; i++) {
+    var n1 = a[i];
+    arrayA[i] = arrayAbc[n1]; 
     }
-    
-    if (arrayACheck > 0)  {   
-    charScore ++;
-    }
-    
-}
-console.log("a");
-console.log(a);
-console.log("a");
-console.log(arrayA);
-console.log("charScore");
-console.log(charScore);
 
-if (charScore < arrayBingo.length) {
-return "LOSE";
-}
+  for (var i = 0; i < arrayBingo.length; i++) {
+    arrayACheck =0;
 
-if (charScore >= arrayBingo.length) {
-return "WIN";
-} 
+    for (var i2 = 0; i2 < arrayA.length; i2++) {
+        if (arrayBingo[i] == arrayA[i2]) arrayACheck = 1;        
+        }
+    
+    if (arrayACheck > 0) charScore++;
+  }
+
+if (charScore < arrayBingo.length) return "LOSE";
+
+if (charScore >= arrayBingo.length) return "WIN";
 
 };
