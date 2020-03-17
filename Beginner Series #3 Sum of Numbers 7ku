@@ -1,20 +1,11 @@
-function getSum(a,b){
-    var c = 0;
-   
-    if (a == b) return a
-   
-    if (a < b) {
-       for (var i = a; i <= b; i++){
-         c += i;
-         }
-       return (c);
-    }
-   
-    if (b < a) {
-       for (var i = b; i <= a; i++){
-         c += i;
-         } 
-       return (c);
-    }
- 
-}
+function getSum(a,b) {
+  let res = 0;
+
+  if (a == b) return a; 
+
+  if (a < b) for (let i = a; i <= b; i++) res = res + i;
+
+  if (b < a) for (let i = b; i <= a; i++) res = res + i;
+  
+  return (res);
+  }
