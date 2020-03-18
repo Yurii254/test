@@ -1,0 +1,48 @@
+function jumpTo(n){
+  //coding and coding..
+ let startPoint = 1;
+ let endPoint = n;
+ let res = 0; 
+ let m = 0;
+ 
+  console.log (n);
+  //если n = 2 возвращаем 1
+  if (n == 1) return 0;
+  if (n == 2) return 1;
+  if (n == 3) return 2;
+  //создаем массив
+  let arr = [];
+  //заполняем массив еденицами в количестве n 
+  for (let i = 0; i < n; i++) arr[i] = 1;
+        
+  //console.log (arr);
+  
+  //считаем сумму элементов
+  let value = arr.reduce((sum, current) => sum + current, 0);
+ 
+  
+  //минимальное количество прыжков
+  
+  
+  //цикл пока значение равно n
+  
+  while (value == n) {
+  
+   console.log (value);
+   console.log (n);
+  //добавляем к значениею еденицу
+  //удаляем последнее значение в массив
+  m++; //n =1
+  for (let i = m; i < arr.length-1; i++) arr[i]++;
+  
+  arr.splice(arr.length-2, 1);
+  
+  value = arr.reduce((sum, current) => sum + current, 0);
+  
+  }
+  
+  res = arr.length;
+  console.log ("res");
+  console.log (res);
+  return res;
+}
