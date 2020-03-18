@@ -1,0 +1,15 @@
+function houseNumbersSum(inputArray) {
+  //coding and coding..
+  let res = 0; 
+  let i = 0;
+  
+  if (inputArray.length < 5) return res;
+  if (inputArray.length >50) return res;
+ 
+    while (inputArray[i] != 0){
+      res += inputArray[i];
+      i++;
+      }
+
+   return(res); 
+   }
